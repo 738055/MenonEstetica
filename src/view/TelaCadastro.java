@@ -37,6 +37,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
@@ -130,6 +131,14 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem8);
+
+        jMenuItem3.setText("Cadastro Fornecedor");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem3);
 
         jMenuBar1.add(jMenu2);
 
@@ -261,6 +270,12 @@ jDesktopPane1.add(telaOs);
 telaOs.setVisible(true);
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+TelaCadastroFornecedor telaCadFornecedor = new TelaCadastroFornecedor();
+jDesktopPane1.add(telaCadFornecedor);
+telaCadFornecedor.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -316,6 +331,7 @@ telaOs.setVisible(true);
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
