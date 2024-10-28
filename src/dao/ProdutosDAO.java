@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import conexao.ConexaoBanco;
 import java.util.ArrayList;
 import java.util.List;
-import model.CadastroProdutos;
+import Model.CadastroProdutos;
 
 public class ProdutosDAO {
 
