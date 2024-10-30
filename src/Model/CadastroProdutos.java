@@ -10,60 +10,128 @@ package Model;
  */
 public class CadastroProdutos {
 
-    private int id;
-    private String nome;
-    private float preco;
-    private int quantidade;
-    private String descricao;
+    private int idProduto;
+    private String nomeProduto;
+    private String marcaProduto;
+    private int idFornecedor;
+    private String NomeFornecedor;
+    private int idUnidadeMedida;
+    private String DescricaoUnidade;
+    private float valorCompra;
+    private float valorVenda; 
+    private int idTipoProduto;
+    private String DescricaoTipoProduto;
+    private float quantidadeDisponivel;
+    private String descricaoProduto;
 
     public CadastroProdutos() {
 
     }
 
-    public CadastroProdutos(String nome, float preco, int quantidade, String descricao) {
-        this.nome = nome;
-        this.preco = preco;
-        this.quantidade = quantidade;
-        this.descricao = descricao;
+    public int getIdProduto() {
+        return idProduto;
     }
 
-    public int getId() {
-        return id;
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getNomeProduto() {
+        return nomeProduto;
     }
 
-    public String getNome() {
-        return nome;
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getMarcaProduto() {
+        return marcaProduto;
     }
 
-    public float getPreco() {
-        return preco;
+    public void setMarcaProduto(String marcaProduto) {
+        this.marcaProduto = marcaProduto;
     }
 
-    public void setPreco(float preco) {
-        this.preco = preco;
+    public int getIdFornecedor() {
+        return idFornecedor;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public void setIdFornecedor(int idFornecedor) {
+        this.idFornecedor = idFornecedor;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public String getNomeFornecedor() {
+        return NomeFornecedor;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public void setNomeFornecedor(String NomeFornecedor) {
+        this.NomeFornecedor = NomeFornecedor;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public int getIdUnidadeMedida() {
+        return idUnidadeMedida;
     }
+
+    public void setIdUnidadeMedida(int idUnidadeMedida) {
+        this.idUnidadeMedida = idUnidadeMedida;
+    }
+
+    public String getDescricaoUnidade() {
+        return DescricaoUnidade;
+    }
+
+    public void setDescricaoUnidade(String DescricaoUnidade) {
+        this.DescricaoUnidade = DescricaoUnidade;
+    }
+
+    public float getValorCompra() {
+        return valorCompra;
+    }
+
+    public void setValorCompra(float valorCompra) {
+        this.valorCompra = valorCompra;
+    }
+
+    public float getValorVenda() {
+        return valorVenda;
+    }
+
+    public void setValorVenda(float valorVenda) {
+        this.valorVenda = valorVenda;
+    }
+
+    public int getIdTipoProduto() {
+        return idTipoProduto;
+    }
+
+    public void setIdTipoProduto(int idTipoProduto) {
+        this.idTipoProduto = idTipoProduto;
+    }
+
+    public String getDescricaoTipoProduto() {
+        return DescricaoTipoProduto;
+    }
+
+    public void setDescricaoTipoProduto(String DescricaoTipoProduto) {
+        this.DescricaoTipoProduto = DescricaoTipoProduto;
+    }
+
+    public float getQuantidadeDisponivel() {
+        return quantidadeDisponivel;
+    }
+
+    public void setQuantidadeDisponivel(float quantidadeDisponivel) {
+        this.quantidadeDisponivel = quantidadeDisponivel;
+    }
+
+    public String getDescricaoProduto() {
+        return descricaoProduto;
+    }
+
+    public void setDescricaoProduto(String descricaoProduto) {
+        this.descricaoProduto = descricaoProduto;
+    }
+
+    
 }
+    

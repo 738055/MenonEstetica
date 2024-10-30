@@ -28,18 +28,23 @@ public class ProdutosDAO {
     }
 
     public boolean inserir(CadastroProdutos produto) {
-        
-
-          
-        String sql = "INSERT INTO CadastroProdutos (nome, preco, quantidade, descricao) VALUES (?, ?, ?, ?)";
+               
+        String sql = "INSERT INTO CadastroProdutos (NomeProduto,MarcaProduto,IdFornecedor, IdUnidadeMedida, ValorCompraProduto,ValorVendaProduto,IdTipoProduto,QuantidadeEstoque,DescriçaoProduto)"
+                + "VALUES (?, ?, (select IdFornecedor from Fornecedor where NomeFornecedor = ?), (select IdUnidadeMedida from UnidadeMedida where DescricaoMedida=?), ?,?,(select IdTipoProduto from TipoProduto where DescricaoTipoProduto =?,?,?)";
         PreparedStatement stmt = null;
 
         try {
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, produto.getNome());
-            stmt.setFloat(2, produto.getPreco());
-            stmt.setInt(3, produto.getQuantidade());
-            stmt.setString(4, produto.getDescricao());
+            stmt.setString(1, produto.getNomeProduto());
+            stmt.setString(2, produto.getMarcaProduto());
+            stmt.setInt(3, produto.getIdFornecedor());
+            stmt.setInt(4, produto.getIdUnidadeMedida());
+            stmt.setFloat(5,produto.getValorCompra());
+            stmt.setFloat(6,produto.getValorVenda());
+            stmt.setInt(7,produto.getIdTipoProduto());
+            stmt.setFloat(8,produto.getQuantidadeDisponivel());
+            stmt.setString(9,produto.getDescricaoProduto());
+            
 
             stmt.executeUpdate();
             return true;
@@ -52,16 +57,20 @@ public class ProdutosDAO {
     }
 
     public boolean atualizar(CadastroProdutos produto) {
-        String sql = "UPDATE CadastroProdutos SET nome = ?, preco = ?, quantidade = ?, descricao = ? WHERE id = ?";
+        String sql = "UPDATE CadastroProdutos SET NomeProduto = ?, MarcaProduto = ?, IdFornecedor = ?, IdUnidadeMedida = ?, ValorCompraProduto=?, ValorVendaProduto = ?, IdTipoProduto = ?, QuantidadeEstoque = ?, DescriçaoProduto = ? WHERE IdProduto = ?";
         PreparedStatement stmt = null;
 
         try {
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, produto.getNome());
-            stmt.setFloat(2, produto.getPreco());
-            stmt.setInt(3, produto.getQuantidade());
-            stmt.setString(4, produto.getDescricao());
-            stmt.setInt(5, produto.getId());
+            stmt.setString(1, produto.getNomeProduto());
+            stmt.setString(2, produto.getMarcaProduto());
+            stmt.setInt(3, produto.getIdFornecedor());
+            stmt.setInt(4, produto.getIdUnidadeMedida());
+            stmt.setFloat(5,produto.getValorCompra());
+            stmt.setFloat(6,produto.getValorVenda());
+            stmt.setInt(7,produto.getIdTipoProduto());
+            stmt.setFloat(8,produto.getQuantidadeDisponivel());
+            stmt.setString(9,produto.getDescricaoProduto());
 
             stmt.executeUpdate();
             return true;
@@ -74,7 +83,7 @@ public class ProdutosDAO {
     }
 
     public boolean deletar(int id) {
-        String sql = "DELETE FROM CadastroProdutos WHERE id = ?";
+        String sql = "DELETE FROM CadastroProdutos WHERE IdProduto = ?";
         PreparedStatement stmt = null;
 
         try {
@@ -105,11 +114,15 @@ public class ProdutosDAO {
 
             while (rs.next()) {
                 CadastroProdutos produto = new CadastroProdutos();
-                produto.setId(rs.getInt("id"));
-                produto.setNome(rs.getString("nome"));
-                produto.setPreco(rs.getFloat("preco"));
-                produto.setQuantidade(rs.getInt("quantidade"));
-                produto.setDescricao(rs.getString("descricao"));
+                produto.setIdProduto(rs.getInt("IdProduto"));
+                produto.setNomeProduto(rs.getString("NomeProduto"));
+                produto.setMarcaProduto(rs.getString("MarcaProduto"));
+                produto.setIdFornecedor(rs.getInt("IdFornecedor"));
+                produto.setIdUnidadeMedida (rs.getInt("IdUnidadeMedida"));
+                produto.setValorCompra(rs.getInt("ValorCompraProduto"));
+                produto.setValorVenda(rs.getInt("ValorVendaProduto"));
+                produto.setQuantidadeDisponivel(rs.getInt("QuantidadeEstoque"));
+                produto.setDescricaoProduto(rs.getString("DescriçaoProduto"));
                 produtos.add(produto);
             }
 
